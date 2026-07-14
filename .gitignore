@@ -7,9 +7,10 @@ assets-src/
 
 # internal handoff docs & rules
 docs/
-README.md
 CLAUDE_PROJECT_RULES.md
 
 # tooling / session
 .claude/
 .DS_Store
+.vercel
+.env*
