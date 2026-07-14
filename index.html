@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hearth &amp; Fable — Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #123E42; }
+    a { color: #F8EFDD; text-decoration: none; }
+    a:hover { color: #E8823C; }
+    ::selection { background: #E0742F; color: #3A1C05; }
+    @media (max-width: 760px) {
+      header[style] { flex-wrap: wrap; row-gap: 14px; }
+      header[style] nav { flex-wrap: wrap; row-gap: 10px; font-size: 14px; }
+      section[data-screen-label] > div[style*="display: grid"] { display: flex !important; flex-direction: column !important; }
+    }
+    @keyframes hfFloat { 0%, 100% { transform: rotate(-1.2deg) translateY(4px); } 50% { transform: rotate(-1.2deg) translateY(-4px); } }
+    @keyframes hfBreath { 0%, 100% { opacity: 0.45; } 50% { opacity: 0.9; } }
+    @keyframes hfDrift {
+      0% { transform: translate(0, 0); opacity: 0; }
+      12% { opacity: var(--p-op, 0.5); }
+      88% { opacity: var(--p-op, 0.5); }
+      100% { transform: translate(var(--p-dx, 30px), var(--p-dy, 90vh)); opacity: 0; }
+    }
+    @keyframes hfSway { 0%, 100% { transform: scale(1.07) translate(0, 0); } 50% { transform: scale(1.075) translate(-6px, 4px); } }
+  </style>
+</head>
+<body>
+<section data-screen-label="Home S1 — Hero (dusk)" style="position: relative; width: 100%; min-height: 100vh; background: #123E42; overflow: hidden; font-family: Lora, Georgia, serif;">
+
+  <!-- Full-bleed hero illustration (contract: /assets/home-hero-dusk.png) -->
+  <div style="position: absolute; inset: 0; overflow: hidden;">
+    <div data-parallax-bg="0.12" style="position: absolute; inset: -14% 0 0 0; will-change: transform;">
+      <img loading="eager" fetchpriority="high" decoding="async" src="assets/home-hero-dusk.webp" alt="The Hearth &amp; Fable bakery on its cobblestone corner at dusk — golden window-light spilling onto the stones, a ribbon of bread-scent curling from the chimney" style="width: 100%; height: 100%; object-fit: cover; object-position: 62% 38%; transform: scale(1.07); display: block; animation: hfSway 16s ease-in-out infinite;" data-loop="true">
+    </div>
+    <!-- flour / light particles drifting through the dusk -->
+    <div aria-hidden="true" data-loop="true" style="position: absolute; inset: 0; pointer-events: none;">
+      <span style="position: absolute; top: -3%; left: 12%; width: 5px; height: 5px; border-radius: 50%; background: #F8EFDD; --p-op: 0.4; --p-dx: 40px; --p-dy: 105vh; animation: hfDrift 17s linear infinite;"></span>
+      <span style="position: absolute; top: -3%; left: 31%; width: 3px; height: 3px; border-radius: 50%; background: #F8EFDD; --p-op: 0.3; --p-dx: -30px; --p-dy: 105vh; animation: hfDrift 23s linear 4s infinite;"></span>
+      <span style="position: absolute; top: -3%; left: 48%; width: 4px; height: 4px; border-radius: 50%; background: #E8823C; --p-op: 0.35; --p-dx: 55px; --p-dy: 105vh; animation: hfDrift 20s linear 9s infinite;"></span>
+      <span style="position: absolute; top: -3%; left: 63%; width: 3px; height: 3px; border-radius: 50%; background: #F8EFDD; --p-op: 0.28; --p-dx: -45px; --p-dy: 105vh; animation: hfDrift 26s linear 2s infinite;"></span>
+      <span style="position: absolute; top: -3%; left: 78%; width: 5px; height: 5px; border-radius: 50%; background: #E8823C; --p-op: 0.32; --p-dx: 35px; --p-dy: 105vh; animation: hfDrift 19s linear 12s infinite;"></span>
+      <span style="position: absolute; top: -3%; left: 90%; width: 3px; height: 3px; border-radius: 50%; background: #F8EFDD; --p-op: 0.3; --p-dx: -25px; --p-dy: 105vh; animation: hfDrift 24s linear 7s infinite;"></span>
+    </div>
+    <!-- Legibility grade: deepen the open sky on the left, keep the bakery glowing -->
+    <div style="position: absolute; inset: 0; background: linear-gradient(100deg, rgba(18,62,66,0.82) 0%, rgba(18,62,66,0.55) 34%, rgba(18,62,66,0.12) 58%, rgba(18,62,66,0) 75%);"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,62,66,0.55) 0%, rgba(18,62,66,0) 26%, rgba(18,62,66,0) 70%, rgba(18,62,66,0.35) 100%);"></div>
+    <div style="position: absolute; inset: 0; background: #123E42; opacity: 0; pointer-events: none;"></div>
+  </div>
+
+  <!-- Top bar: wordmark + nav -->
+  
+    <header style="position: absolute; top: 0; left: 0; right: 0; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 34px clamp(28px, 5vw, 72px);">
+      <a href="index.html" aria-label="Hearth &amp; Fable — home" style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 24px; letter-spacing: 0.01em; color: #F8EFDD; display: flex; align-items: baseline; gap: 2px;">
+        <span>Hearth </span><span style="position: relative; padding: 0 1px;">&amp;<span style="position: absolute; top: -2px; right: -4px; width: 5px; height: 5px; border-radius: 50%; background: #E8823C; display: block;"></span></span><span> Fable</span>
+      </a>
+      <nav aria-label="Main" style="display: flex; align-items: center; gap: clamp(18px, 2.4vw, 34px); font-size: 15px; letter-spacing: 0.02em;">
+        <a href="index.html" style="color: #F8EFDD; border-bottom: 1px solid rgba(248,239,221,0.7); padding-bottom: 3px;">Home</a>
+        <a href="our-story.html" style="color: rgba(248,239,221,0.82);">Our Story</a>
+        <a href="the-bakes.html" style="color: rgba(248,239,221,0.82);">The Bakes</a>
+        <a href="the-craft.html" style="color: rgba(248,239,221,0.82);">The Craft</a>
+        <a href="the-cafe.html" style="color: rgba(248,239,221,0.82);">The Café</a>
+        <a href="visit.html" style="color: rgba(248,239,221,0.82);">Visit</a>
+      </nav>
+    </header>
+  
+
+  <!-- Hero copy — left, against the open sky -->
+  <div style="position: relative; z-index: 2; min-height: 100vh; display: flex; align-items: center; padding: 120px clamp(28px, 5vw, 72px) 170px;">
+    <div data-parallax-fg="0.05" style="max-width: 620px; display: flex; flex-direction: column; align-items: flex-start; gap: 26px; will-change: transform;">
+      <p style="margin: 0; font-family: Lora, Georgia, serif; font-size: 14px; font-weight: 500; letter-spacing: 0.24em; color: rgba(248,239,221,0.85);">A FAMILY BAKERY, FOUR GENERATIONS DEEP</p>
+      <h1 style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(52px, 6.4vw, 92px); line-height: 1.04; letter-spacing: -0.01em; color: #F8EFDD; text-wrap: balance;">Where every loaf begins a story.</h1>
+      <p style="margin: 0; font-family: Lora, Georgia, serif; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.6; color: rgba(248,239,221,0.92); max-width: 460px; text-wrap: pretty;">Step out of the rush and into the warm hum of our hearth.</p>
+      <a href="visit.html" style="margin-top: 10px; display: inline-flex; align-items: center; gap: 12px; background: #E8823C; color: #3A1C05; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 18px; padding: 16px 32px; border-radius: 10px; box-shadow: 0 10px 28px rgba(0,0,0,0.28);" style-hover="background: #E0742F; color: #3A1C05; box-shadow: 0 12px 32px rgba(0,0,0,0.34);">Visit the bakery</a>
+    </div>
+  </div>
+
+  <!-- Watercolor-wash edge into cream (procedural turbulence — sections never meet in a straight line) -->
+  <div style="position: absolute; left: 0; right: 0; bottom: -2px; z-index: 4; pointer-events: none;">
+    <svg width="100%" height="130" viewBox="0 0 1600 130" preserveAspectRatio="none" style="display: block;">
+      <defs>
+        <filter id="hfWash" x="-10%" y="-60%" width="120%" height="220%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.011 0.045" numOctaves="3" seed="7" result="noise"></feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="55" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+        </filter>
+        <filter id="hfWashSoft" x="-10%" y="-60%" width="120%" height="220%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.017 0.06" numOctaves="3" seed="21" result="noise"></feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="70" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+        </filter>
+      </defs>
+      <rect x="-40" y="72" width="1680" height="120" fill="#FBF3E6" opacity="0.45" filter="url(#hfWashSoft)"></rect>
+      <rect x="-40" y="86" width="1680" height="120" fill="#FBF3E6" filter="url(#hfWash)"></rect>
+    </svg>
+  </div>
+</section>
+
+<!-- S2 Welcome — Tomas (day palette begins) -->
+<section data-screen-label="Home S2 — Welcome (Tomas)" style="position: relative; background: #FBF3E6; padding: clamp(72px, 9vw, 130px) clamp(28px, 5vw, 72px) clamp(80px, 10vw, 150px); font-family: Lora, Georgia, serif; overflow: hidden;">
+  <!-- Watercolor paper texture, ≤4% -->
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.035; pointer-events: none;">
+    <filter id="hfPaper"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"></feTurbulence></filter>
+    <rect width="100%" height="100%" filter="url(#hfPaper)"></rect>
+  </svg>
+
+  <div style="position: relative; max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: minmax(320px, 460px) 1fr; gap: clamp(48px, 7vw, 110px); align-items: center;">
+
+    <!-- Painted card: tomas-counter-portrait (MASTER) — card frame is a UI component -->
+    <figure data-reveal="left" style="margin: 0; position: relative; transform: rotate(-1.6deg);">
+      <div style="background: #FFFDF7; padding: 24px 24px 32px; border-radius: 4px; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 18px 42px rgba(14,79,82,0.16); clip-path: polygon(0.6% 1.2%, 24% 0.2%, 51% 0.9%, 78% 0%, 99.4% 1%, 99.8% 30%, 99.2% 55%, 100% 79%, 99.3% 98.9%, 74% 99.6%, 49% 99%, 23% 99.8%, 0.4% 99.1%, 0.9% 74%, 0.2% 49%, 0.8% 24%);">
+        <img loading="lazy" decoding="async" src="assets/tomas-counter-portrait.webp" alt="Tomas Fable behind the worn wooden counter, smiling like he has been expecting you — shelves of warm loaves behind him" style="outline: 1px solid rgba(14,79,82,0.22); outline-offset: -1px; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; transform: scale(1.04);">
+      </div>
+      <!-- pin -->
+      <div aria-hidden="true" style="position: absolute; top: -9px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; background: #0E4F52; box-shadow: 0 3px 6px rgba(14,79,82,0.35), inset -2px -2px 3px rgba(0,0,0,0.25);"></div>
+    </figure>
+
+    <!-- Quote + welcome -->
+    <div data-reveal="up" style="display: flex; flex-direction: column; gap: 26px; max-width: 560px;">
+      <blockquote style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(30px, 3.3vw, 46px); line-height: 1.22; color: #0E4F52; text-wrap: balance;">&ldquo;Come in, come in &mdash; the bread&rsquo;s still <span style="color: #E0742F;">warm</span>.&rdquo;</blockquote>
+      <p style="margin: 0; font-size: 16px; letter-spacing: 0.14em; color: rgba(14,79,82,0.75);">&mdash; TOMAS FABLE, TODAY&rsquo;S HOST</p>
+      <p style="margin: 0; font-size: clamp(17px, 1.4vw, 19px); line-height: 1.75; color: #274b4d; text-wrap: pretty;">We are the Fable family &mdash; four generations of bakers behind one counter. The oven Elias built has never gone cold, and the door he hung has never been locked to a hungry traveler. Come in as a stranger; you will not stay one for long.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Wash edge: cream → cream (subtle teal breath between S2 and S3) -->
+<div aria-hidden="true" style="position: relative; height: 90px; background: #FBF3E6; overflow: hidden;">
+  <svg width="100%" height="90" viewBox="0 0 1600 90" preserveAspectRatio="none" style="display: block; position: absolute; inset: 0;">
+    <filter id="hfWash2" x="-10%" y="-80%" width="120%" height="260%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.013 0.05" numOctaves="3" seed="11" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="50" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+    <rect x="-40" y="30" width="1680" height="100" fill="#F3E7D2" filter="url(#hfWash2)"></rect>
+  </svg>
+</div>
+
+<!-- S3 Saga teaser — four medallions -->
+<section data-screen-label="Home S3 — Saga (medallions)" style="position: relative; background: #F3E7D2; padding: clamp(70px, 8vw, 120px) clamp(28px, 5vw, 72px) clamp(80px, 9vw, 140px); font-family: Lora, Georgia, serif; overflow: hidden;">
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none;">
+    <rect width="100%" height="100%" filter="url(#hfPaper)"></rect>
+  </svg>
+
+  <div style="position: relative; max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(48px, 5vw, 72px); align-items: center;">
+    <h2 data-reveal="up" style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(36px, 4vw, 56px); line-height: 1.1; color: #0E4F52; text-align: center; text-wrap: balance;">Four generations. <span style="color: #E0742F;">One fire.</span></h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr)); gap: clamp(28px, 4vw, 56px); width: 100%; max-width: 1080px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); gap: clamp(28px, 4vw, 56px); align-content: start;">
+      <figure data-reveal="up" style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;">
+        <div style="width: clamp(160px, 16vw, 210px); aspect-ratio: 1; border-radius: 50%; padding: 10px; background: #F8EFDD; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 14px 32px rgba(14,79,82,0.14);" style-hover="box-shadow: 0 4px 6px rgba(14,79,82,0.12), 0 20px 44px rgba(14,79,82,0.20);">
+          <img loading="lazy" decoding="async" src="assets/medallion-elias.webp" alt="Elias Fable, the founder, at his stone oven with a single spark rising" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; border-radius: 50%; transform: scale(1.02);">
+        </div>
+        <figcaption style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 21px; color: #0E4F52;">Elias</span>
+          <span style="font-size: 15.5px; line-height: 1.55; color: rgba(14,79,82,0.78); max-width: 230px; text-wrap: pretty;">Followed the smell of bread until it told him to stop.</span>
+        </figcaption>
+      </figure>
+      <figure data-reveal="up" style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;">
+        <div style="width: clamp(160px, 16vw, 210px); aspect-ratio: 1; border-radius: 50%; padding: 10px; background: #F8EFDD; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 14px 32px rgba(14,79,82,0.14);" style-hover="box-shadow: 0 4px 6px rgba(14,79,82,0.12), 0 20px 44px rgba(14,79,82,0.20);">
+          <img loading="lazy" decoding="async" src="assets/medallion-marta.webp" alt="Marta Fable, keeper of the fire, floured hands over The Book" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; border-radius: 50%; transform: scale(1.02);">
+        </div>
+        <figcaption style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 21px; color: #0E4F52;">Marta</span>
+          <span style="font-size: 15.5px; line-height: 1.55; color: rgba(14,79,82,0.78); max-width: 230px; text-wrap: pretty;">Kept the fire through every winter &mdash; and wrote it all down.</span>
+        </figcaption>
+      </figure>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); gap: clamp(28px, 4vw, 56px); align-content: start;">
+      <figure data-reveal="up" style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;">
+        <div style="width: clamp(160px, 16vw, 210px); aspect-ratio: 1; border-radius: 50%; padding: 10px; background: #F8EFDD; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 14px 32px rgba(14,79,82,0.14);" style-hover="box-shadow: 0 4px 6px rgba(14,79,82,0.12), 0 20px 44px rgba(14,79,82,0.20);">
+          <img loading="lazy" decoding="async" src="assets/medallion-oskar.webp" alt="Oskar Fable, the dreamer, with a doughnut levitating above his palm" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; border-radius: 50%; transform: scale(1.02);">
+        </div>
+        <figcaption style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 21px; color: #0E4F52;">Oskar</span>
+          <span style="font-size: 15.5px; line-height: 1.55; color: rgba(14,79,82,0.78); max-width: 230px; text-wrap: pretty;">Made bakes that behaved like small miracles.</span>
+        </figcaption>
+      </figure>
+      <figure data-reveal="up" style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;">
+        <div style="width: clamp(160px, 16vw, 210px); aspect-ratio: 1; border-radius: 50%; padding: 10px; background: #F8EFDD; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 14px 32px rgba(14,79,82,0.14);" style-hover="box-shadow: 0 4px 6px rgba(14,79,82,0.12), 0 20px 44px rgba(14,79,82,0.20);">
+          <img loading="lazy" decoding="async" src="assets/medallion-lena-tomas.webp" alt="Lena and Tomas Fable, today's hosts, in the bakery doorway" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; border-radius: 50%; transform: scale(1.02);">
+        </div>
+        <figcaption style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 21px; color: #0E4F52;">Lena &amp; Tomas</span>
+          <span style="font-size: 15.5px; line-height: 1.55; color: rgba(14,79,82,0.78); max-width: 230px; text-wrap: pretty;">She bakes. He welcomes. The fire is in good hands.</span>
+        </figcaption>
+      </figure>
+      </div>
+    </div>
+
+    <a href="our-story.html" style="font-size: 17px; color: #0E4F52; border-bottom: 1.5px solid rgba(14,79,82,0.5); padding-bottom: 3px;" style-hover="color: #E0742F; border-bottom: 1.5px solid #E0742F;">Read our story&nbsp;&rarr;</a>
+  </div>
+</section>
+
+<!-- Wash edge: back to base cream between S3 and S4 -->
+<div aria-hidden="true" style="position: relative; height: 90px; background: #F3E7D2; overflow: hidden;">
+  <svg width="100%" height="90" viewBox="0 0 1600 90" preserveAspectRatio="none" style="display: block; position: absolute; inset: 0;">
+    <filter id="hfWash3" x="-10%" y="-80%" width="120%" height="260%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014 0.052" numOctaves="3" seed="17" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="48" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+    <rect x="-40" y="32" width="1680" height="100" fill="#FBF3E6" filter="url(#hfWash3)"></rect>
+  </svg>
+</div>
+
+<!-- S4 Little Wonders — three bakes -->
+<section data-screen-label="Home S4 — Little Wonders" style="position: relative; background: #FBF3E6; padding: clamp(70px, 8vw, 120px) clamp(28px, 5vw, 72px) clamp(80px, 9vw, 140px); font-family: Lora, Georgia, serif; overflow: hidden;">
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.035; pointer-events: none;">
+    <rect width="100%" height="100%" filter="url(#hfPaper)"></rect>
+  </svg>
+
+  <div style="position: relative; max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(48px, 5vw, 72px); align-items: center;">
+    <h2 data-reveal="up" style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(36px, 4vw, 56px); line-height: 1.1; color: #0E4F52; text-align: center; text-wrap: balance;">Little <span style="color: #E0742F;">wonders</span>, baked nightly.</h2>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: clamp(24px, 3.5vw, 52px); width: 100%; max-width: 1060px;">
+      <figure data-reveal="up" style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; flex: 1 1 240px; max-width: 330px; min-width: min(240px, 100%);">
+        <div data-loop="true" style="width: 100%; background: #FFFDF7; padding: 24px 24px 32px; border-radius: 4px; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 16px 36px rgba(14,79,82,0.14); transform: rotate(-1.2deg); animation: hfFloat 5.5s ease-in-out infinite; clip-path: polygon(0.5% 1%, 26% 0.3%, 52% 1.1%, 77% 0.2%, 99.5% 0.9%, 99.1% 27%, 99.8% 52%, 99.2% 76%, 99.6% 99%, 75% 99.3%, 50% 98.8%, 24% 99.6%, 0.6% 99.2%, 1% 73%, 0.3% 49%, 0.9% 25%);" style-hover="box-shadow: 0 4px 6px rgba(14,79,82,0.12), 0 22px 46px rgba(14,79,82,0.20);">
+          <img loading="lazy" decoding="async" src="assets/wonder-doughnut.webp" alt="The Doughnut — levitating a finger's width above its plate, sugar-light crumbs drifting" style="outline: 1px solid rgba(14,79,82,0.22); outline-offset: -1px; display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 45%; transform: scale(1.03);">
+        </div>
+        <figcaption style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 22px; color: #0E4F52;">The Doughnut</span>
+          <span style="font-size: 15.5px; line-height: 1.55; color: rgba(14,79,82,0.78); max-width: 260px; text-wrap: pretty;">Lighter than it should be.</span>
+        </figcaption>
+      </figure>
+      <figure data-reveal="up" style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; flex: 1 1 240px; max-width: 330px; min-width: min(240px, 100%);">
+        <div style="width: 100%; background: #FFFDF7; padding: 24px 24px 32px; border-radius: 4px; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 16px 36px rgba(14,79,82,0.14); transform: rotate(0.9deg); clip-path: polygon(0.8% 0.5%, 25% 1%, 51% 0.2%, 76% 1.1%, 99.2% 0.4%, 99.7% 26%, 99% 51%, 99.8% 77%, 99.1% 99.5%, 74% 98.9%, 49% 99.7%, 25% 99%, 0.4% 99.5%, 0.9% 75%, 0.2% 50%, 0.7% 26%);" style-hover="box-shadow: 0 4px 6px rgba(14,79,82,0.12), 0 22px 46px rgba(14,79,82,0.20);">
+          <img loading="lazy" decoding="async" src="assets/wonder-hearth-loaf.webp" alt="The Hearth Loaf — a crust rolling like the sunset hills it came from" style="outline: 1px solid rgba(14,79,82,0.22); outline-offset: -1px; display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 45%; transform: scale(1.03);">
+        </div>
+        <figcaption style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 22px; color: #0E4F52;">The Hearth Loaf</span>
+          <span style="font-size: 15.5px; line-height: 1.55; color: rgba(14,79,82,0.78); max-width: 260px; text-wrap: pretty;">A crust like the hills it came from.</span>
+        </figcaption>
+      </figure>
+      <figure data-reveal="up" style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; flex: 1 1 240px; max-width: 330px; min-width: min(240px, 100%);">
+        <div style="width: 100%; background: #FFFDF7; padding: 24px 24px 32px; border-radius: 4px; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 16px 36px rgba(14,79,82,0.14); transform: rotate(-0.7deg); clip-path: polygon(0.3% 0.8%, 24% 0.2%, 50% 1%, 78% 0.4%, 99.6% 1.2%, 99.2% 25%, 99.9% 50%, 99.3% 74%, 99.7% 98.8%, 76% 99.5%, 51% 99%, 26% 99.8%, 0.7% 99.3%, 0.4% 76%, 1% 51%, 0.5% 24%);" style-hover="box-shadow: 0 4px 6px rgba(14,79,82,0.12), 0 22px 46px rgba(14,79,82,0.20);">
+          <img loading="lazy" decoding="async" src="assets/wonder-fancy.webp" alt="The Dough Bird — a seasonal fancy that appears when it pleases" style="outline: 1px solid rgba(14,79,82,0.22); outline-offset: -1px; display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 45%; transform: scale(1.03);">
+        </div>
+        <figcaption style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 22px; color: #0E4F52;">The Dough Bird</span>
+          <span style="font-size: 15.5px; line-height: 1.55; color: rgba(14,79,82,0.78); max-width: 260px; text-wrap: pretty;">It appears when it pleases.</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <a href="the-bakes.html" style="display: inline-flex; align-items: center; gap: 10px; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 17px; color: #0E4F52; border: 1.5px solid rgba(14,79,82,0.45); border-radius: 10px; padding: 13px 26px; background: transparent;" style-hover="color: #0E4F52; border: 1.5px solid #0E4F52; background: rgba(14,79,82,0.05);">See all the bakes</a>
+  </div>
+</section>
+
+<!-- Wash edge: cream → dusk mini-shift for the café glimpse -->
+<div aria-hidden="true" style="position: relative; height: 100px; background: #FBF3E6; overflow: hidden; margin-bottom: -1px;">
+  <svg width="100%" height="100" viewBox="0 0 1600 100" preserveAspectRatio="none" style="display: block; position: absolute; inset: 0;">
+    <filter id="hfWash4" x="-10%" y="-80%" width="120%" height="260%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.048" numOctaves="3" seed="29" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="55" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+    <rect x="-40" y="34" width="1680" height="110" fill="#123E42" filter="url(#hfWash4)"></rect>
+  </svg>
+</div>
+
+<!-- S5 Café glimpse — mini dusk moment -->
+<section data-screen-label="Home S5 — Café glimpse" style="position: relative; background: #123E42; padding: clamp(70px, 8vw, 120px) clamp(28px, 5vw, 72px) clamp(80px, 9vw, 140px); font-family: Lora, Georgia, serif; overflow: hidden;">
+  <!-- soft vignette on dusk (fades in below the wash edge — no seam at the top) -->
+  <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 18%, rgba(0,0,0,0.14) 52%, rgba(0,0,0,0.14) 68%, rgba(0,0,0,0) 100%); pointer-events: none;"></div>
+
+  <div style="position: relative; max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: minmax(min(340px, 100%), 520px) 1fr; gap: clamp(48px, 7vw, 110px); align-items: center;">
+
+    <!-- Painted card: cafe-window-glimpse -->
+    <figure data-reveal="left" style="margin: 0; position: relative; transform: rotate(1.4deg);">
+      <div style="background: #FFFDF7; padding: 24px 24px 32px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.25), 0 22px 48px rgba(0,0,0,0.35); clip-path: polygon(0.4% 0.9%, 25% 0.3%, 52% 1%, 79% 0.2%, 99.5% 0.8%, 99.9% 28%, 99.3% 53%, 99.8% 78%, 99.2% 99.1%, 75% 99.7%, 50% 99%, 24% 99.6%, 0.5% 99.2%, 0.8% 75%, 0.3% 50%, 0.9% 26%);">
+        <img loading="lazy" decoding="async" src="assets/cafe-window-glimpse.webp" alt="The café seen through its window from the cool evening street — a warm family scene inside, the cat asleep on the sill" style="outline: 1px solid rgba(14,79,82,0.22); outline-offset: -1px; display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 45%; transform: scale(1.04);">
+      </div>
+      <div aria-hidden="true" style="position: absolute; top: -9px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; background: #E8823C; box-shadow: 0 3px 6px rgba(0,0,0,0.4), inset -2px -2px 3px rgba(0,0,0,0.25);"></div>
+    </figure>
+
+    <!-- Copy -->
+    <div data-reveal="up" style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px; max-width: 520px;">
+      <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(34px, 3.8vw, 52px); line-height: 1.12; color: #F8EFDD; text-wrap: balance;">The <span style="color: #E8823C;">quiet</span> side of the counter.</h2>
+      <p style="margin: 0; font-size: clamp(17px, 1.4vw, 19px); line-height: 1.75; color: rgba(248,239,221,0.88); text-wrap: pretty;">Past the shelves and the till there are worn wooden tables, steam rising from cups, and a windowsill that belongs to the cat. The rush stays outside the glass.</p>
+      <a href="the-cafe.html" style="font-size: 17px; color: #F8EFDD; border-bottom: 1.5px solid rgba(248,239,221,0.55); padding-bottom: 3px;" style-hover="color: #E8823C; border-bottom: 1.5px solid #E8823C;">Stay a while&nbsp;&rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- Wash edge: dusk → cream for the final invitation -->
+<div aria-hidden="true" style="position: relative; height: 100px; background: #123E42; overflow: hidden;">
+  <svg width="100%" height="100" viewBox="0 0 1600 100" preserveAspectRatio="none" style="display: block; position: absolute; inset: 0;">
+    <filter id="hfWash5" x="-10%" y="-80%" width="120%" height="260%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.013 0.05" numOctaves="3" seed="37" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="52" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+    <rect x="-40" y="34" width="1680" height="110" fill="#FBF3E6" filter="url(#hfWash5)"></rect>
+  </svg>
+</div>
+
+<!-- S6 Final invitation -->
+<section data-screen-label="Home S6 — The door is open" style="position: relative; background: #FBF3E6; padding: clamp(70px, 8vw, 120px) clamp(28px, 5vw, 72px) clamp(90px, 10vw, 150px); font-family: Lora, Georgia, serif; overflow: hidden;">
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.035; pointer-events: none;">
+    <rect width="100%" height="100%" filter="url(#hfPaper)"></rect>
+  </svg>
+
+  <div style="position: relative; max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 32px; text-align: center;">
+    <!-- Painted card: door-open-dusk -->
+    <figure data-reveal="up" style="margin: 0; position: relative; width: min(420px, 100%); transform: rotate(-1deg);">
+      <!-- breathing wedge of light behind the card -->
+      <div aria-hidden="true" data-loop="true" style="position: absolute; inset: -26%; border-radius: 50%; background: radial-gradient(ellipse 62% 58% at 50% 58%, rgba(232,130,60,0.6) 0%, rgba(224,116,47,0.28) 42%, rgba(232,130,60,0) 72%); animation: hfBreath 6s ease-in-out infinite; pointer-events: none;"></div>
+      <div style="background: #FFFDF7; padding: 24px 24px 32px; border-radius: 4px; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 18px 40px rgba(14,79,82,0.16); clip-path: polygon(0.6% 1%, 26% 0.2%, 53% 1.1%, 78% 0.3%, 99.4% 1%, 99.8% 27%, 99.1% 52%, 99.7% 77%, 99.3% 99%, 74% 99.6%, 49% 99%, 24% 99.7%, 0.5% 99.2%, 0.9% 74%, 0.2% 49%, 0.8% 25%);">
+        <img loading="lazy" decoding="async" src="assets/door-open-dusk.webp" alt="The bakery door ajar at dusk, a wedge of golden light spilling across the cobblestones" style="outline: 1px solid rgba(14,79,82,0.22); outline-offset: -1px; display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 55%; transform: scale(1.04);">
+      </div>
+      <div aria-hidden="true" style="position: absolute; top: -9px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; background: #0E4F52; box-shadow: 0 3px 6px rgba(14,79,82,0.35), inset -2px -2px 3px rgba(0,0,0,0.25);"></div>
+    </figure>
+
+    <h2 data-reveal="up" style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(36px, 4.2vw, 58px); line-height: 1.1; color: #0E4F52; text-wrap: balance;">The door is open.</h2>
+    <a href="visit.html" style="display: inline-flex; align-items: center; gap: 12px; background: #E0742F; color: #3A1C05; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 18px; padding: 16px 34px; border-radius: 10px; box-shadow: 0 10px 26px rgba(14,79,82,0.18);" style-hover="background: #E8823C; color: #3A1C05; box-shadow: 0 12px 30px rgba(14,79,82,0.24);">Plan your visit</a>
+  </div>
+</section>
+
+<!-- Wash edge: cream → teal footer -->
+<div aria-hidden="true" style="position: relative; height: 90px; background: #FBF3E6; overflow: hidden;">
+  <svg width="100%" height="90" viewBox="0 0 1600 90" preserveAspectRatio="none" style="display: block; position: absolute; inset: 0;">
+    <filter id="hfWash6" x="-10%" y="-80%" width="120%" height="260%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014 0.05" numOctaves="3" seed="43" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="48" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+    <rect x="-40" y="30" width="1680" height="100" fill="#0E4F52" filter="url(#hfWash6)"></rect>
+  </svg>
+</div>
+
+<!-- Footer on teal -->
+<footer data-screen-label="Home — Footer" style="position: relative; background: #0E4F52; padding: clamp(56px, 6vw, 90px) clamp(28px, 5vw, 72px) 48px; font-family: Lora, Georgia, serif;">
+  <div style="max-width: 1140px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px;">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 36px;">
+      <a href="index.html" aria-label="Hearth &amp; Fable — home" style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 26px; color: #F8EFDD; display: flex; align-items: baseline; gap: 2px;">
+        <span>Hearth </span><span style="position: relative; padding: 0 1px;">&amp;<span style="position: absolute; top: -2px; right: -4px; width: 5px; height: 5px; border-radius: 50%; background: #E8823C; display: block;"></span></span><span> Fable</span>
+      </a>
+      <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: clamp(18px, 2.4vw, 34px); font-size: 15px; letter-spacing: 0.02em;">
+        <a href="index.html" style="color: rgba(248,239,221,0.85);">Home</a>
+        <a href="our-story.html" style="color: rgba(248,239,221,0.85);">Our Story</a>
+        <a href="the-bakes.html" style="color: rgba(248,239,221,0.85);">The Bakes</a>
+        <a href="the-craft.html" style="color: rgba(248,239,221,0.85);">The Craft</a>
+        <a href="the-cafe.html" style="color: rgba(248,239,221,0.85);">The Café</a>
+        <a href="visit.html" style="color: rgba(248,239,221,0.85);">Visit</a>
+      </nav>
+    </div>
+    <div style="border-top: 1px solid rgba(248,239,221,0.18); padding-top: 26px; display: flex; justify-content: center; font-size: 15px; color: rgba(248,239,221,0.7);">
+      <span style="font-style: italic;">Baked with patience by the Fable family.</span>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px; margin-top: -18px; font-size: 13.5px; color: rgba(248,239,221,0.55);">
+      <span>&copy; 2026 Hearth &amp; Fable. All rights reserved.</span>
+      <span>Hewn &amp; kindled by <a href="https://webdevcaveman.com" style="color: rgba(248,239,221,0.7); letter-spacing: 0.12em; font-size: 12.5px;" style-hover="color: #E8823C;">WEBDEVCAVEMAN</a></span>
+    </div>
+  </div>
+</footer>
+<script src="site.js" defer></script>
+</body>
+</html>

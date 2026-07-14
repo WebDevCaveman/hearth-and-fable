@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hearth &amp; Fable — Visit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #123E42; }
+    a { color: #0E4F52; text-decoration: none; }
+    a:hover { color: #E8823C; }
+    ::selection { background: #E0742F; color: #3A1C05; }
+    @media (max-width: 760px) {
+      header[style] { flex-wrap: wrap; row-gap: 14px; }
+      header[style] nav { flex-wrap: wrap; row-gap: 10px; font-size: 14px; }
+      section[data-screen-label] > div[style*="display: grid"] { display: flex !important; flex-direction: column !important; }
+    }
+    @keyframes viWedge { 0%, 100% { opacity: 0.32; } 50% { opacity: 0.6; } }
+    @keyframes viSwirl {
+      0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0; }
+      15% { opacity: var(--sw-op, 0.4); }
+      75% { opacity: var(--sw-op, 0.4); }
+      100% { transform: translate(var(--sw-dx, 24px), -140px) rotate(18deg) scale(1.5); opacity: 0; }
+    }
+    @keyframes viSmoke {
+      0% { transform: translate(0, 0) scale(1); opacity: 0; }
+      20% { opacity: 0.5; }
+      80% { opacity: 0.35; }
+      100% { transform: translate(10px, -46px) scale(1.7); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+<!-- ============ S1 Hero — the threshold (golden hour) ============ -->
+<section data-screen-label="Visit S1 — Hero (threshold)" style="position: relative; width: 100%; min-height: 100vh; background: #123E42; overflow: hidden; font-family: Lora, Georgia, serif;">
+  <div style="position: absolute; inset: 0; overflow: hidden;">
+    <div data-parallax-bg="0.12" style="position: absolute; inset: -14% 0 0 0; will-change: transform;">
+      <img loading="eager" fetchpriority="high" decoding="async" src="assets/visit-hero-threshold.webp" alt="Tomas holding the bakery door open at golden hour, warm light spilling past him onto the street" style="width: 100%; height: 100%; object-fit: cover; object-position: 62% 40%; transform: scale(1.06); display: block;">
+    </div>
+    <!-- light wedge breath from the doorway -->
+    <div aria-hidden="true" data-loop="true" style="position: absolute; inset: 0; background: radial-gradient(ellipse 32% 42% at 68% 62%, rgba(232,130,60,0.38) 0%, rgba(232,130,60,0) 70%); mix-blend-mode: screen; animation: viWedge 6.5s ease-in-out infinite; pointer-events: none;"></div>
+    <!-- scent-swirl curling from the doorway -->
+    <div aria-hidden="true" data-loop="true" style="position: absolute; inset: 0; pointer-events: none;">
+      <span style="position: absolute; bottom: 38%; left: 66%; width: 26px; height: 10px; border-radius: 50%; background: rgba(248,239,221,0.5); filter: blur(6px); --sw-op: 0.4; --sw-dx: 30px; animation: viSwirl 9s ease-out infinite;"></span>
+      <span style="position: absolute; bottom: 34%; left: 71%; width: 20px; height: 8px; border-radius: 50%; background: rgba(248,239,221,0.45); filter: blur(5px); --sw-op: 0.35; --sw-dx: -22px; animation: viSwirl 11s ease-out 3.5s infinite;"></span>
+      <span style="position: absolute; bottom: 42%; left: 63%; width: 22px; height: 9px; border-radius: 50%; background: rgba(248,239,221,0.45); filter: blur(6px); --sw-op: 0.35; --sw-dx: 26px; animation: viSwirl 10s ease-out 6s infinite;"></span>
+    </div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(100deg, rgba(18,62,66,0.82) 0%, rgba(18,62,66,0.55) 34%, rgba(18,62,66,0.12) 58%, rgba(18,62,66,0) 75%);"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,62,66,0.55) 0%, rgba(18,62,66,0) 26%, rgba(18,62,66,0) 70%, rgba(18,62,66,0.35) 100%);"></div>
+  </div>
+
+  <header style="position: absolute; top: 0; left: 0; right: 0; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 34px clamp(28px, 5vw, 72px);">
+    <a href="index.html" aria-label="Hearth &amp; Fable — home" style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 24px; letter-spacing: 0.01em; color: #F8EFDD; display: flex; align-items: baseline; gap: 2px;">
+      <span>Hearth </span><span style="position: relative; padding: 0 1px;">&amp;<span style="position: absolute; top: -2px; right: -4px; width: 5px; height: 5px; border-radius: 50%; background: #E8823C; display: block;"></span></span><span> Fable</span>
+    </a>
+    <nav aria-label="Main" style="display: flex; align-items: center; gap: clamp(18px, 2.4vw, 34px); font-size: 15px; letter-spacing: 0.02em;">
+      <a href="index.html" style="color: rgba(248,239,221,0.82);">Home</a>
+      <a href="our-story.html" style="color: rgba(248,239,221,0.82);">Our Story</a>
+      <a href="the-bakes.html" style="color: rgba(248,239,221,0.82);">The Bakes</a>
+      <a href="the-craft.html" style="color: rgba(248,239,221,0.82);">The Craft</a>
+      <a href="the-cafe.html" style="color: rgba(248,239,221,0.82);">The Café</a>
+      <a href="visit.html" style="color: #F8EFDD; border-bottom: 1px solid rgba(248,239,221,0.7); padding-bottom: 3px;">Visit</a>
+    </nav>
+  </header>
+
+  <div style="position: relative; z-index: 2; min-height: 100vh; display: flex; align-items: center; padding: 120px clamp(28px, 5vw, 72px) 170px;">
+    <div data-parallax-fg="0.05" style="max-width: 640px; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; will-change: transform;">
+      <p style="margin: 0; font-size: 14px; font-weight: 500; letter-spacing: 0.24em; color: rgba(248,239,221,0.85);">THE DOOR IS OPEN</p>
+      <h1 style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(48px, 6vw, 86px); line-height: 1.06; letter-spacing: -0.01em; color: #F8EFDD;">Come as you are.<br>Leave a little warmer.</h1>
+      <p style="margin: 0; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.6; color: rgba(248,239,221,0.92); max-width: 480px; text-wrap: pretty; font-style: italic;">&ldquo;I&rsquo;ll keep a doughnut for you.&rdquo; &mdash; Tomas</p>
+    </div>
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: -2px; z-index: 4; pointer-events: none;">
+    <svg width="100%" height="130" viewBox="0 0 1600 130" preserveAspectRatio="none" style="display: block;">
+      <defs>
+        <filter id="viWash1" x="-10%" y="-60%" width="120%" height="220%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.011 0.045" numOctaves="3" seed="97" result="noise"></feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="55" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+        </filter>
+      </defs>
+      <rect x="-40" y="86" width="1680" height="120" fill="#FBF3E6" filter="url(#viWash1)"></rect>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ S2 Hours — typographic on cream ============ -->
+<section data-screen-label="Visit S2 — Hours" style="position: relative; background: #FBF3E6; padding: clamp(80px, 9vw, 140px) clamp(28px, 5vw, 72px); font-family: Lora, Georgia, serif; overflow: hidden;">
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.035; pointer-events: none;">
+    <filter id="viPaper"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"></feTurbulence></filter>
+    <rect width="100%" height="100%" filter="url(#viPaper)"></rect>
+  </svg>
+  <div style="position: relative; max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 40px; text-align: center;">
+    <h2 data-reveal="up" style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(36px, 4vw, 56px); line-height: 1.1; color: #0E4F52; text-wrap: balance;">When the fire is lit.</h2>
+    <div style="display: flex; flex-direction: column; gap: 18px; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 400; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.5; color: #274b4d;">
+      <p data-lantern="1" style="margin: 0;">We bake at night.</p>
+      <p data-lantern="2" style="margin: 0;">We <span style="color: #E0742F;">open with the sun</span>.</p>
+      <p data-lantern="3" style="margin: 0;">We close when the lanterns come on.</p>
+    </div>
+    <div data-reveal="up" style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid rgba(14,79,82,0.25); padding-top: 28px; width: min(360px, 100%);">
+      <p style="margin: 0; font-size: 14px; letter-spacing: 0.22em; color: rgba(14,79,82,0.6);">FOR THE PRACTICAL-MINDED</p>
+      <p style="margin: 0; font-size: 19px; color: #0E4F52;">Mon&ndash;Sun &middot; 7:00 &ndash; 19:00</p>
+    </div>
+  </div>
+</section>
+
+<!-- wash: cream → warm cream -->
+<div aria-hidden="true" style="position: relative; height: 90px; background: #FBF3E6; overflow: hidden;">
+  <svg width="100%" height="90" viewBox="0 0 1600 90" preserveAspectRatio="none" style="display: block; position: absolute; inset: 0;">
+    <filter id="viWash2" x="-10%" y="-80%" width="120%" height="260%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.013 0.05" numOctaves="3" seed="101" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="50" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+    <rect x="-40" y="30" width="1680" height="100" fill="#F3E7D2" filter="url(#viWash2)"></rect>
+  </svg>
+</div>
+
+<!-- ============ S3 The illustrated map ============ -->
+<section data-screen-label="Visit S3 — The map" style="position: relative; background: #F3E7D2; padding: clamp(80px, 9vw, 140px) clamp(28px, 5vw, 72px); font-family: Lora, Georgia, serif; overflow: hidden;">
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none;">
+    <rect width="100%" height="100%" filter="url(#viPaper)"></rect>
+  </svg>
+  <div style="position: relative; max-width: 980px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 40px; text-align: center;">
+    <h2 data-reveal="up" style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(32px, 3.8vw, 52px); line-height: 1.12; color: #0E4F52; text-wrap: balance;">Between the two hills, follow your <span style="color: #E0742F;">nose</span>.</h2>
+    <figure style="margin: 0; position: relative; width: min(760px, 100%); transform: rotate(-0.8deg);">
+      <div style="background: #FFFDF7; padding: 24px 24px 32px; border-radius: 4px; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 18px 42px rgba(14,79,82,0.16); clip-path: polygon(0.5% 1%, 25% 0.3%, 51% 1.1%, 78% 0.2%, 99.5% 0.9%, 99.9% 27%, 99.2% 52%, 99.8% 77%, 99.3% 99.1%, 75% 99.6%, 50% 99%, 24% 99.7%, 0.5% 99.2%, 0.9% 74%, 0.3% 49%, 0.8% 25%);">
+        <div style="position: relative; overflow: hidden;">
+          <img loading="lazy" decoding="async" src="assets/visit-map-town.webp" alt="A hand-drawn watercolor map of the little town — hills, winding lanes, the bakery marked with a glowing chimney and a tiny H&F flag" style="outline: 1px solid rgba(14,79,82,0.22); outline-offset: -1px; display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 50%; transform: scale(1.02);">
+          <!-- route: town gate (bottom-left) → bakery (center) drawn on scroll -->
+          <svg viewBox="0 0 400 300" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; -webkit-mask-image: radial-gradient(ellipse 70% 66% at 50% 55%, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 88%); mask-image: radial-gradient(ellipse 70% 66% at 50% 55%, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 88%);">
+            <defs>
+              <mask id="viRouteMask">
+                <path data-map-path="true" d="M 60 252 C 82 242, 112 220, 140 204 C 165 190, 178 187, 205 182 C 222 179, 228 171, 230 158" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"></path>
+              </mask>
+            </defs>
+            <path d="M 60 252 C 82 242, 112 220, 140 204 C 165 190, 178 187, 205 182 C 222 179, 228 171, 230 158" fill="none" stroke="#E0742F" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="1 9" opacity="0.85" mask="url(#viRouteMask)"></path>
+          </svg>
+          <!-- chimney smoke loop at the bakery mark -->
+          <div aria-hidden="true" data-loop="true" style="position: absolute; top: 13%; left: 59%; pointer-events: none;">
+            <span style="position: absolute; width: 10px; height: 8px; border-radius: 50%; background: rgba(248,239,221,0.7); filter: blur(3px); animation: viSmoke 5s ease-out infinite; display: block;"></span>
+            <span style="position: absolute; left: 4px; width: 8px; height: 7px; border-radius: 50%; background: rgba(248,239,221,0.6); filter: blur(3px); animation: viSmoke 6.5s ease-out 2.2s infinite; display: block;"></span>
+          </div>
+        </div>
+      </div>
+      <div aria-hidden="true" style="position: absolute; top: -9px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; background: #E8823C; box-shadow: 0 3px 6px rgba(14,79,82,0.35), inset -2px -2px 3px rgba(0,0,0,0.25);"></div>
+    </figure>
+    <p style="margin: 0; font-size: 19px; color: #0E4F52;">3 Hearthstone Lane, the Old Town</p>
+  </div>
+</section>
+
+<!-- wash: warm cream → cream -->
+<div aria-hidden="true" style="position: relative; height: 90px; background: #F3E7D2; overflow: hidden;">
+  <svg width="100%" height="90" viewBox="0 0 1600 90" preserveAspectRatio="none" style="display: block; position: absolute; inset: 0;">
+    <filter id="viWash3" x="-10%" y="-80%" width="120%" height="260%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014 0.05" numOctaves="3" seed="103" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="48" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+    <rect x="-40" y="30" width="1680" height="100" fill="#FBF3E6" filter="url(#viWash3)"></rect>
+  </svg>
+</div>
+
+<!-- ============ S4 Contact ============ -->
+<section data-screen-label="Visit S4 — Say hello" style="position: relative; background: #FBF3E6; padding: clamp(80px, 9vw, 130px) clamp(28px, 5vw, 72px) clamp(90px, 10vw, 150px); font-family: Lora, Georgia, serif; overflow: hidden;">
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.035; pointer-events: none;">
+    <rect width="100%" height="100%" filter="url(#viPaper)"></rect>
+  </svg>
+  <div data-reveal="up" style="position: relative; max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center;">
+    <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(36px, 4.2vw, 58px); line-height: 1.1; color: #0E4F52;">Say hello.</h2>
+    <div style="display: flex; flex-direction: column; gap: 10px; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.6; color: #274b4d;">
+      <p style="margin: 0;">hello@hearthandfable.example</p>
+      <p style="margin: 0;">+00 000 000 000</p>
+    </div>
+    <a href="mailto:hello@hearthandfable.example" style="margin-top: 8px; display: inline-flex; align-items: center; gap: 12px; background: #E0742F; color: #3A1C05; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 18px; padding: 16px 34px; border-radius: 10px; box-shadow: 0 10px 26px rgba(14,79,82,0.18);" style-hover="background: #E8823C; color: #3A1C05; box-shadow: 0 12px 30px rgba(14,79,82,0.24);">Write to us</a>
+  </div>
+</section>
+
+<!-- wash: cream → teal footer -->
+<div aria-hidden="true" style="position: relative; height: 90px; background: #FBF3E6; overflow: hidden;">
+  <svg width="100%" height="90" viewBox="0 0 1600 90" preserveAspectRatio="none" style="display: block; position: absolute; inset: 0;">
+    <filter id="viWash4" x="-10%" y="-80%" width="120%" height="260%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014 0.05" numOctaves="3" seed="107" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="48" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+    <rect x="-40" y="30" width="1680" height="100" fill="#0E4F52" filter="url(#viWash4)"></rect>
+  </svg>
+</div>
+
+<footer data-screen-label="Visit — Footer" style="position: relative; background: #0E4F52; padding: clamp(56px, 6vw, 90px) clamp(28px, 5vw, 72px) 48px; font-family: Lora, Georgia, serif;">
+  <div style="max-width: 1140px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px;">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 36px;">
+      <a href="index.html" aria-label="Hearth &amp; Fable — home" style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 26px; color: #F8EFDD; display: flex; align-items: baseline; gap: 2px;">
+        <span>Hearth </span><span style="position: relative; padding: 0 1px;">&amp;<span style="position: absolute; top: -2px; right: -4px; width: 5px; height: 5px; border-radius: 50%; background: #E8823C; display: block;"></span></span><span> Fable</span>
+      </a>
+      <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: clamp(18px, 2.4vw, 34px); font-size: 15px; letter-spacing: 0.02em;">
+        <a href="index.html" style="color: rgba(248,239,221,0.85);" style-hover="color: #E8823C;">Home</a>
+        <a href="our-story.html" style="color: rgba(248,239,221,0.85);" style-hover="color: #E8823C;">Our Story</a>
+        <a href="the-bakes.html" style="color: rgba(248,239,221,0.85);" style-hover="color: #E8823C;">The Bakes</a>
+        <a href="the-craft.html" style="color: rgba(248,239,221,0.85);" style-hover="color: #E8823C;">The Craft</a>
+        <a href="the-cafe.html" style="color: rgba(248,239,221,0.85);" style-hover="color: #E8823C;">The Café</a>
+        <a href="visit.html" style="color: rgba(248,239,221,0.85);" style-hover="color: #E8823C;">Visit</a>
+      </nav>
+    </div>
+    <div style="border-top: 1px solid rgba(248,239,221,0.18); padding-top: 26px; display: flex; justify-content: center; font-size: 15px; color: rgba(248,239,221,0.7);">
+      <span style="font-style: italic;">Baked with patience by the Fable family.</span>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px; margin-top: -18px; font-size: 13.5px; color: rgba(248,239,221,0.55);">
+      <span>&copy; 2026 Hearth &amp; Fable. All rights reserved.</span>
+      <span>Hewn &amp; kindled by <a href="https://webdevcaveman.com" style="color: rgba(248,239,221,0.7); letter-spacing: 0.12em; font-size: 12.5px;" style-hover="color: #E8823C;">WEBDEVCAVEMAN</a></span>
+    </div>
+  </div>
+</footer>
+<script src="site.js" defer></script>
+</body>
+</html>

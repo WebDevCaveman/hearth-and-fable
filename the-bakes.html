@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hearth &amp; Fable — The Bakes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #FBF3E6; }
+    a { color: #0E4F52; text-decoration: none; }
+    a:hover { color: #E0742F; }
+    ::selection { background: #E0742F; color: #3A1C05; }
+    @media (max-width: 760px) {
+      header[style] { flex-wrap: wrap; row-gap: 14px; }
+      header[style] nav { flex-wrap: wrap; row-gap: 10px; font-size: 14px; }
+      section[data-screen-label] > div[style*="display: grid"] { display: flex !important; flex-direction: column !important; }
+    }
+    @keyframes bkFloat { 0%, 100% { transform: rotate(-1.5deg) translateY(4px); } 50% { transform: rotate(-1.5deg) translateY(-4px); } }
+    @keyframes bkDust {
+      0% { transform: translate(0, 0); opacity: 0; }
+      12% { opacity: var(--p-op, 0.5); }
+      88% { opacity: var(--p-op, 0.5); }
+      100% { transform: translate(var(--p-dx, 30px), 95vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+<!-- ============ S1 Hero — the counter in morning light (day) ============ -->
+<section data-screen-label="Bakes S1 — Hero (counter)" style="position: relative; width: 100%; min-height: 92vh; background: #FBF3E6; overflow: hidden; font-family: Lora, Georgia, serif;">
+  <div style="position: absolute; inset: 0; overflow: hidden;">
+    <div data-parallax-bg="0.12" style="position: absolute; inset: -14% 0 0 0; will-change: transform;">
+      <img loading="eager" fetchpriority="high" decoding="async" src="assets/bakes-hero-counter.webp" alt="The bakery display in morning light — shelves of storybook bakes, a faint magical glow on the glazes, sugar-dust hanging in the sunbeams" style="width: 100%; height: 100%; object-fit: cover; object-position: 55% 45%; transform: scale(1.06); display: block;">
+    </div>
+    <!-- sugar-dust drifting down the sunbeams -->
+    <div aria-hidden="true" data-loop="true" style="position: absolute; inset: 0; pointer-events: none;">
+      <span style="position: absolute; top: -3%; left: 56%; width: 4px; height: 4px; border-radius: 50%; background: #FFFDF7; --p-op: 0.55; --p-dx: 30px; animation: bkDust 14s linear infinite;"></span>
+      <span style="position: absolute; top: -3%; left: 64%; width: 3px; height: 3px; border-radius: 50%; background: #E8823C; --p-op: 0.35; --p-dx: -22px; animation: bkDust 18s linear 4s infinite;"></span>
+      <span style="position: absolute; top: -3%; left: 72%; width: 5px; height: 5px; border-radius: 50%; background: #FFFDF7; --p-op: 0.5; --p-dx: 38px; animation: bkDust 12s linear 7s infinite;"></span>
+      <span style="position: absolute; top: -3%; left: 81%; width: 3px; height: 3px; border-radius: 50%; background: #FFFDF7; --p-op: 0.4; --p-dx: -26px; animation: bkDust 17s linear 2s infinite;"></span>
+      <span style="position: absolute; top: -3%; left: 89%; width: 4px; height: 4px; border-radius: 50%; background: #E8823C; --p-op: 0.3; --p-dx: 24px; animation: bkDust 15s linear 9s infinite;"></span>
+    </div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(100deg, rgba(251,243,230,0.94) 0%, rgba(251,243,230,0.78) 30%, rgba(251,243,230,0.25) 58%, rgba(251,243,230,0) 78%);"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(251,243,230,0.75) 0%, rgba(251,243,230,0) 30%, rgba(251,243,230,0) 72%, rgba(251,243,230,0.6) 100%);"></div>
+  </div>
+
+  <header style="position: absolute; top: 0; left: 0; right: 0; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 34px clamp(28px, 5vw, 72px);">
+    <a href="index.html" aria-label="Hearth &amp; Fable — home" style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 24px; letter-spacing: 0.01em; color: #0E4F52; display: flex; align-items: baseline; gap: 2px;">
+      <span>Hearth </span><span style="position: relative; padding: 0 1px;">&amp;<span style="position: absolute; top: -2px; right: -4px; width: 5px; height: 5px; border-radius: 50%; background: #E0742F; display: block;"></span></span><span> Fable</span>
+    </a>
+    <nav aria-label="Main" style="display: flex; align-items: center; gap: clamp(18px, 2.4vw, 34px); font-size: 15px; letter-spacing: 0.02em;">
+      <a href="index.html" style="color: rgba(14,79,82,0.8);">Home</a>
+      <a href="our-story.html" style="color: rgba(14,79,82,0.8);">Our Story</a>
+      <a href="the-bakes.html" style="color: #0E4F52; border-bottom: 1px solid rgba(14,79,82,0.7); padding-bottom: 3px;">The Bakes</a>
+      <a href="the-craft.html" style="color: rgba(14,79,82,0.8);">The Craft</a>
+      <a href="the-cafe.html" style="color: rgba(14,79,82,0.8);">The Café</a>
+      <a href="visit.html" style="color: rgba(14,79,82,0.8);">Visit</a>
+    </nav>
+  </header>
+
+  <div style="position: relative; z-index: 2; min-height: 92vh; display: flex; align-items: center; padding: 130px clamp(28px, 5vw, 72px) 150px;">
+    <div data-parallax-fg="0.05" style="max-width: 640px; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; will-change: transform;">
+      <p style="margin: 0; font-size: 14px; font-weight: 500; letter-spacing: 0.24em; color: rgba(14,79,82,0.8);">LITTLE WONDERS, BAKED NIGHTLY</p>
+      <h1 style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(48px, 6vw, 88px); line-height: 1.05; letter-spacing: -0.01em; color: #0E4F52; text-wrap: balance;">Bakes that forgot to be ordinary.</h1>
+      <p style="margin: 0; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.6; color: rgba(14,79,82,0.85); max-width: 440px; text-wrap: pretty;">Portraits from our counter.</p>
+    </div>
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: -2px; z-index: 4; pointer-events: none;">
+    <svg width="100%" height="110" viewBox="0 0 1600 110" preserveAspectRatio="none" style="display: block;">
+      <defs>
+        <filter id="bkWash1" x="-10%" y="-70%" width="120%" height="240%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012 0.046" numOctaves="3" seed="9" result="noise"></feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="52" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+        </filter>
+      </defs>
+      <rect x="-40" y="38" width="1680" height="100" fill="#F3E7D2" filter="url(#bkWash1)"></rect>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ S2 Shrine — The Doughnut ============ -->
+<section data-screen-label="Bakes S2 — Shrine (The Doughnut)" style="position: relative; background: #F3E7D2; padding: clamp(80px, 9vw, 140px) clamp(28px, 5vw, 72px); font-family: Lora, Georgia, serif; overflow: hidden;">
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.035; pointer-events: none;">
+    <filter id="bkPaper"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="6"></feTurbulence></filter>
+    <rect width="100%" height="100%" filter="url(#bkPaper)"></rect>
+  </svg>
+  <div style="position: relative; max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: minmax(min(320px, 100%), 480px) 1fr; gap: clamp(48px, 7vw, 110px); align-items: center;">
+    <figure data-reveal="left" style="margin: 0; position: relative;">
+      <!-- one-time halo bloom on scroll -->
+      <div aria-hidden="true" data-halo="true" style="position: absolute; inset: -20%; border-radius: 50%; background: radial-gradient(ellipse 58% 52% at 50% 46%, rgba(232,130,60,0.4) 0%, rgba(232,130,60,0) 70%); opacity: 0; transition: opacity 1.8s ease; pointer-events: none;"></div>
+      <div data-loop="true" style="background: #FFFDF7; padding: 24px 24px 32px; border-radius: 4px; animation: bkFloat 5.5s ease-in-out infinite; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 18px 42px rgba(14,79,82,0.16); clip-path: polygon(0.5% 1%, 25% 0.3%, 51% 1.1%, 78% 0.2%, 99.5% 0.9%, 99.9% 27%, 99.2% 52%, 99.8% 77%, 99.3% 99.1%, 75% 99.6%, 50% 99%, 24% 99.7%, 0.5% 99.2%, 0.9% 74%, 0.3% 49%, 0.8% 25%);">
+        <img loading="lazy" decoding="async" src="assets/wonder-doughnut.webp" alt="The Doughnut — hovering a finger's width above its plate, sugar-light crumbs drifting around it" style="outline: 1px solid rgba(14,79,82,0.22); outline-offset: -1px; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%; transform: scale(1.03);">
+      </div>
+      <div aria-hidden="true" style="position: absolute; top: -9px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; background: #0E4F52; box-shadow: 0 3px 6px rgba(14,79,82,0.35), inset -2px -2px 3px rgba(0,0,0,0.25);"></div>
+    </figure>
+    <div data-reveal="up" style="display: flex; flex-direction: column; align-items: flex-start; gap: 22px; max-width: 520px;">
+      <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(36px, 4.2vw, 60px); line-height: 1.1; color: #0E4F52;">The Doughnut.</h2>
+      <p style="margin: 0; font-size: clamp(18px, 1.5vw, 21px); line-height: 1.75; color: #274b4d; text-wrap: pretty;">Lighter than it should be. Oskar&rsquo;s first <span style="color: #E0742F;">wonder</span>, still rising.</p>
+    </div>
+  </div>
+</section>
+
+<!-- wash back to cream -->
+<div aria-hidden="true" style="position: relative; height: 90px; background: #F3E7D2; overflow: hidden; margin-bottom: -1px;">
+  <svg width="100%" height="90" viewBox="0 0 1600 90" preserveAspectRatio="none" style="display: block; position: absolute; inset: 0;">
+    <filter id="bkWash2" x="-10%" y="-80%" width="120%" height="260%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.013 0.05" numOctaves="3" seed="15" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="50" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+    <rect x="-40" y="30" width="1680" height="100" fill="#FBF3E6" filter="url(#bkWash2)"></rect>
+  </svg>
+</div>
+
+<!-- ============ S3 Shrine — The Hearth Loaf ============ -->
+<section data-screen-label="Bakes S3 — Shrine (The Hearth Loaf)" style="position: relative; background: #FBF3E6; padding: clamp(80px, 9vw, 140px) clamp(28px, 5vw, 72px); font-family: Lora, Georgia, serif; overflow: hidden;">
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.035; pointer-events: none;">
+    <rect width="100%" height="100%" filter="url(#bkPaper)"></rect>
+  </svg>
+  <div style="position: relative; max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr minmax(min(320px, 100%), 480px); gap: clamp(48px, 7vw, 110px); align-items: center;">
+    <div data-reveal="up" style="display: flex; flex-direction: column; align-items: flex-start; gap: 22px; max-width: 520px; justify-self: end;">
+      <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(36px, 4.2vw, 60px); line-height: 1.1; color: #0E4F52;">The Hearth Loaf.</h2>
+      <p style="margin: 0; font-size: clamp(18px, 1.5vw, 21px); line-height: 1.75; color: #274b4d; text-wrap: pretty;">Baked in Elias&rsquo;s <span style="color: #E0742F;">stone oven</span>. A crust like the hills it came from.</p>
+    </div>
+    <figure data-reveal="right" style="margin: 0; position: relative; transform: rotate(1.3deg); order: 1;">
+      <div style="background: #FFFDF7; padding: 24px 24px 32px; border-radius: 4px; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 18px 42px rgba(14,79,82,0.16); clip-path: polygon(0.8% 0.5%, 25% 1%, 51% 0.2%, 76% 1.1%, 99.2% 0.4%, 99.7% 26%, 99% 51%, 99.8% 77%, 99.1% 99.5%, 74% 98.9%, 49% 99.7%, 25% 99%, 0.4% 99.5%, 0.9% 75%, 0.2% 50%, 0.7% 26%);">
+        <div style="position: relative; overflow: hidden;">
+          <img loading="lazy" decoding="async" src="assets/wonder-hearth-loaf.webp" alt="The Hearth Loaf — a deep golden crust rolling like the sunset hills it came from" style="outline: 1px solid rgba(14,79,82,0.22); outline-offset: -1px; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%; transform: scale(1.03);">
+          <!-- one-time warm light sweep across the crust -->
+          <div aria-hidden="true" data-sweep="true" style="position: absolute; top: -10%; bottom: -10%; left: 0; width: 45%; background: linear-gradient(75deg, rgba(255,240,210,0) 0%, rgba(255,240,210,0.5) 50%, rgba(255,240,210,0) 100%); transform: translateX(-140%) skewX(-8deg); transition: transform 1.7s ease-in-out; pointer-events: none;"></div>
+        </div>
+      </div>
+      <div aria-hidden="true" style="position: absolute; top: -9px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; background: #E0742F; box-shadow: 0 3px 6px rgba(14,79,82,0.35), inset -2px -2px 3px rgba(0,0,0,0.25);"></div>
+    </figure>
+  </div>
+</section>
+
+<!-- wash to warm cream -->
+<div aria-hidden="true" style="position: relative; height: 90px; background: #FBF3E6; overflow: hidden; margin-bottom: -1px;">
+  <svg width="100%" height="90" viewBox="0 0 1600 90" preserveAspectRatio="none" style="display: block; position: absolute; inset: 0;">
+    <filter id="bkWash3" x="-10%" y="-80%" width="120%" height="260%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014 0.052" numOctaves="3" seed="27" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="48" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+    <rect x="-40" y="30" width="1680" height="100" fill="#F3E7D2" filter="url(#bkWash3)"></rect>
+  </svg>
+</div>
+
+<!-- ============ S4 Gallery — the seasons ============ -->
+<section data-screen-label="Bakes S4 — Seasonal gallery" style="position: relative; background: #F3E7D2; padding: clamp(70px, 8vw, 120px) clamp(28px, 5vw, 72px) clamp(90px, 10vw, 150px); font-family: Lora, Georgia, serif; overflow: hidden;">
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none;">
+    <rect width="100%" height="100%" filter="url(#bkPaper)"></rect>
+  </svg>
+  <div style="position: relative; max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(48px, 5vw, 72px); align-items: center;">
+    <h2 data-reveal="up" style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(36px, 4vw, 56px); line-height: 1.1; color: #0E4F52; text-align: center; text-wrap: balance;">And the seasons bring their own.</h2>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: clamp(24px, 3.5vw, 52px); width: 100%; max-width: 1060px;">
+      <figure data-reveal="up" style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; flex: 1 1 240px; max-width: 330px; min-width: min(240px, 100%);">
+        <div style="width: 100%; background: #FFFDF7; padding: 24px 24px 32px; border-radius: 4px; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 16px 36px rgba(14,79,82,0.14); transform: rotate(-1.2deg); clip-path: polygon(0.5% 1%, 26% 0.3%, 52% 1.1%, 77% 0.2%, 99.5% 0.9%, 99.1% 27%, 99.8% 52%, 99.2% 76%, 99.6% 99%, 75% 99.3%, 50% 98.8%, 24% 99.6%, 0.6% 99.2%, 1% 73%, 0.3% 49%, 0.9% 25%);" style-hover="box-shadow: 0 4px 6px rgba(14,79,82,0.12), 0 22px 46px rgba(14,79,82,0.20);">
+          <img loading="lazy" decoding="async" src="assets/bake-honey-knot.webp" alt="The Honey Knot — a sticky golden twist catching the light" style="outline: 1px solid rgba(14,79,82,0.22); outline-offset: -1px; display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 45%; transform: scale(1.03);">
+        </div>
+        <figcaption style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 22px; color: #0E4F52;">The Honey Knot</span>
+          <span style="font-size: 15.5px; line-height: 1.55; color: rgba(14,79,82,0.78); max-width: 260px; text-wrap: pretty;">Sticky, golden, gone by noon.</span>
+        </figcaption>
+      </figure>
+      <figure data-reveal="up" style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; flex: 1 1 240px; max-width: 330px; min-width: min(240px, 100%);">
+        <div style="width: 100%; background: #FFFDF7; padding: 24px 24px 32px; border-radius: 4px; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 16px 36px rgba(14,79,82,0.14); transform: rotate(0.9deg); clip-path: polygon(0.8% 0.5%, 25% 1%, 51% 0.2%, 76% 1.1%, 99.2% 0.4%, 99.7% 26%, 99% 51%, 99.8% 77%, 99.1% 99.5%, 74% 98.9%, 49% 99.7%, 25% 99%, 0.4% 99.5%, 0.9% 75%, 0.2% 50%, 0.7% 26%);" style-hover="box-shadow: 0 4px 6px rgba(14,79,82,0.12), 0 22px 46px rgba(14,79,82,0.20);">
+          <img loading="lazy" decoding="async" src="assets/bake-berry-lattice.webp" alt="The Berry Lattice — a woven crust with summer glowing through the gaps" style="outline: 1px solid rgba(14,79,82,0.22); outline-offset: -1px; display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 45%; transform: scale(1.03);">
+        </div>
+        <figcaption style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 22px; color: #0E4F52;">The Berry Lattice</span>
+          <span style="font-size: 15.5px; line-height: 1.55; color: rgba(14,79,82,0.78); max-width: 260px; text-wrap: pretty;">A window into summer.</span>
+        </figcaption>
+      </figure>
+      <figure data-reveal="up" style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; flex: 1 1 240px; max-width: 330px; min-width: min(240px, 100%);">
+        <div style="width: 100%; background: #FFFDF7; padding: 24px 24px 32px; border-radius: 4px; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 16px 36px rgba(14,79,82,0.14); transform: rotate(-0.7deg); clip-path: polygon(0.3% 0.8%, 24% 0.2%, 50% 1%, 78% 0.4%, 99.6% 1.2%, 99.2% 25%, 99.9% 50%, 99.3% 74%, 99.7% 98.8%, 76% 99.5%, 51% 99%, 26% 99.8%, 0.7% 99.3%, 0.4% 76%, 1% 51%, 0.5% 24%);" style-hover="box-shadow: 0 4px 6px rgba(14,79,82,0.12), 0 22px 46px rgba(14,79,82,0.20);">
+          <img loading="lazy" decoding="async" src="assets/wonder-fancy.webp" alt="The Dough Bird — a seasonal fancy that appears when it pleases" style="outline: 1px solid rgba(14,79,82,0.22); outline-offset: -1px; display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 45%; transform: scale(1.03);">
+        </div>
+        <figcaption style="display: flex; flex-direction: column; gap: 6px;">
+          <span style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 22px; color: #0E4F52;">The Dough Bird</span>
+          <span style="font-size: 15.5px; line-height: 1.55; color: rgba(14,79,82,0.78); max-width: 260px; text-wrap: pretty;">It appears when it pleases.</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <a href="visit.html" style="display: inline-flex; align-items: center; gap: 12px; background: #E0742F; color: #3A1C05; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 18px; padding: 16px 34px; border-radius: 10px; box-shadow: 0 10px 26px rgba(14,79,82,0.18);" style-hover="background: #E8823C; color: #3A1C05; box-shadow: 0 12px 30px rgba(14,79,82,0.24);">Taste them warm &mdash; visit us</a>
+  </div>
+</section>
+
+<!-- wash: warm cream → teal footer -->
+<div aria-hidden="true" style="position: relative; height: 90px; background: #F3E7D2; overflow: hidden; margin-bottom: -1px;">
+  <svg width="100%" height="90" viewBox="0 0 1600 90" preserveAspectRatio="none" style="display: block; position: absolute; inset: 0;">
+    <filter id="bkWash4" x="-10%" y="-80%" width="120%" height="260%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014 0.05" numOctaves="3" seed="35" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="48" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+    <rect x="-40" y="30" width="1680" height="100" fill="#0E4F52" filter="url(#bkWash4)"></rect>
+  </svg>
+</div>
+
+<!-- Footer (identical to Home) -->
+<footer data-screen-label="Bakes — Footer" style="position: relative; background: #0E4F52; padding: clamp(56px, 6vw, 90px) clamp(28px, 5vw, 72px) 48px; font-family: Lora, Georgia, serif;">
+  <div style="max-width: 1140px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px;">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 36px;">
+      <a href="index.html" aria-label="Hearth &amp; Fable — home" style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 26px; color: #F8EFDD; display: flex; align-items: baseline; gap: 2px;">
+        <span>Hearth </span><span style="position: relative; padding: 0 1px;">&amp;<span style="position: absolute; top: -2px; right: -4px; width: 5px; height: 5px; border-radius: 50%; background: #E8823C; display: block;"></span></span><span> Fable</span>
+      </a>
+      <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: clamp(18px, 2.4vw, 34px); font-size: 15px; letter-spacing: 0.02em;">
+        <a href="index.html" style="color: rgba(248,239,221,0.85);">Home</a>
+        <a href="our-story.html" style="color: rgba(248,239,221,0.85);">Our Story</a>
+        <a href="the-bakes.html" style="color: rgba(248,239,221,0.85);">The Bakes</a>
+        <a href="the-craft.html" style="color: rgba(248,239,221,0.85);">The Craft</a>
+        <a href="the-cafe.html" style="color: rgba(248,239,221,0.85);">The Café</a>
+        <a href="visit.html" style="color: rgba(248,239,221,0.85);">Visit</a>
+      </nav>
+    </div>
+    <div style="border-top: 1px solid rgba(248,239,221,0.18); padding-top: 26px; display: flex; justify-content: center; font-size: 15px; color: rgba(248,239,221,0.7);">
+      <span style="font-style: italic;">Baked with patience by the Fable family.</span>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px; margin-top: -18px; font-size: 13.5px; color: rgba(248,239,221,0.55);">
+      <span>&copy; 2026 Hearth &amp; Fable. All rights reserved.</span>
+      <span>Hewn &amp; kindled by <a href="https://webdevcaveman.com" style="color: rgba(248,239,221,0.7); letter-spacing: 0.12em; font-size: 12.5px;" style-hover="color: #E8823C;">WEBDEVCAVEMAN</a></span>
+    </div>
+  </div>
+</footer>
+<script src="site.js" defer></script>
+</body>
+</html>

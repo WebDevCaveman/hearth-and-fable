@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hearth &amp; Fable — The Café</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; background: #FBF3E6; }
+    a { color: #0E4F52; text-decoration: none; }
+    a:hover { color: #E8823C; }
+    ::selection { background: #E0742F; color: #3A1C05; }
+    @media (max-width: 760px) {
+      header[style] { flex-wrap: wrap; row-gap: 14px; }
+      header[style] nav { flex-wrap: wrap; row-gap: 10px; font-size: 14px; }
+      section[data-screen-label] > div[style*="display: grid"] { display: flex !important; flex-direction: column !important; }
+    }
+    @keyframes caSteam {
+      0% { transform: translate(0, 0) scaleX(1); opacity: 0; }
+      15% { opacity: var(--st-op, 0.5); }
+      70% { opacity: var(--st-op, 0.5); }
+      100% { transform: translate(var(--st-dx, 8px), -120px) scaleX(1.6); opacity: 0; }
+    }
+    @keyframes caLamp { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.55; } }
+    @keyframes caCat { 0%, 100% { transform: rotate(1.2deg) scale(1); } 50% { transform: rotate(1.2deg) scale(1.008); } }
+    @keyframes caMote {
+      0% { transform: translate(0, -8px); opacity: 0; }
+      18% { opacity: var(--m-op, 0.5); }
+      82% { opacity: var(--m-op, 0.5); }
+      100% { transform: translate(var(--m-dx, 12px), 220px); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+<!-- ============ S1 Hero — interior (day, warmest) ============ -->
+<section data-screen-label="Café S1 — Hero (interior)" style="position: relative; width: 100%; min-height: 100vh; background: #FBF3E6; overflow: hidden; font-family: Lora, Georgia, serif;">
+  <div style="position: absolute; inset: 0; overflow: hidden;">
+    <div data-parallax-bg="0.12" style="position: absolute; inset: -14% 0 0 0; will-change: transform;">
+      <img loading="eager" fetchpriority="high" decoding="async" src="assets/cafe-hero-interior.webp" alt="The café interior — worn wooden tables, families over steaming cups, plants and warm lamps, the cooler city beyond the big window" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; transform: scale(1.06); display: block;">
+    </div>
+    <!-- lamp glow breath -->
+    <div aria-hidden="true" data-loop="true" style="position: absolute; inset: 0; background: radial-gradient(ellipse 22% 20% at 72% 30%, rgba(232,130,60,0.35) 0%, rgba(232,130,60,0) 70%); mix-blend-mode: screen; animation: caLamp 7s ease-in-out infinite; pointer-events: none;"></div>
+    <!-- steam columns over cups -->
+    <div aria-hidden="true" data-loop="true" style="position: absolute; inset: 0; pointer-events: none;">
+      <span style="position: absolute; bottom: 34%; left: 62%; width: 6px; height: 26px; border-radius: 50%; background: rgba(248,239,221,0.55); filter: blur(4px); --st-op: 0.5; --st-dx: 10px; animation: caSteam 7s ease-out infinite;"></span>
+      <span style="position: absolute; bottom: 30%; left: 74%; width: 5px; height: 22px; border-radius: 50%; background: rgba(248,239,221,0.5); filter: blur(4px); --st-op: 0.45; --st-dx: -8px; animation: caSteam 9s ease-out 2.5s infinite;"></span>
+      <span style="position: absolute; bottom: 38%; left: 84%; width: 6px; height: 24px; border-radius: 50%; background: rgba(248,239,221,0.5); filter: blur(4px); --st-op: 0.4; --st-dx: 12px; animation: caSteam 8s ease-out 5s infinite;"></span>
+    </div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(100deg, rgba(251,243,230,0.94) 0%, rgba(251,243,230,0.78) 30%, rgba(251,243,230,0.25) 58%, rgba(251,243,230,0) 78%);"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(251,243,230,0.75) 0%, rgba(251,243,230,0) 30%, rgba(251,243,230,0) 72%, rgba(251,243,230,0.6) 100%);"></div>
+  </div>
+
+  <header style="position: absolute; top: 0; left: 0; right: 0; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 34px clamp(28px, 5vw, 72px);">
+    <a href="index.html" aria-label="Hearth &amp; Fable — home" style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 24px; letter-spacing: 0.01em; color: #0E4F52; display: flex; align-items: baseline; gap: 2px;">
+      <span>Hearth </span><span style="position: relative; padding: 0 1px;">&amp;<span style="position: absolute; top: -2px; right: -4px; width: 5px; height: 5px; border-radius: 50%; background: #E0742F; display: block;"></span></span><span> Fable</span>
+    </a>
+    <nav aria-label="Main" style="display: flex; align-items: center; gap: clamp(18px, 2.4vw, 34px); font-size: 15px; letter-spacing: 0.02em;">
+      <a href="index.html" style="color: rgba(14,79,82,0.82);">Home</a>
+      <a href="our-story.html" style="color: rgba(14,79,82,0.82);">Our Story</a>
+      <a href="the-bakes.html" style="color: rgba(14,79,82,0.82);">The Bakes</a>
+      <a href="the-craft.html" style="color: rgba(14,79,82,0.82);">The Craft</a>
+      <a href="the-cafe.html" style="color: #0E4F52; border-bottom: 1px solid rgba(14,79,82,0.7); padding-bottom: 3px;">The Café</a>
+      <a href="visit.html" style="color: rgba(14,79,82,0.82);">Visit</a>
+    </nav>
+  </header>
+
+  <div style="position: relative; z-index: 2; min-height: 100vh; display: flex; align-items: center; padding: 120px clamp(28px, 5vw, 72px) 170px;">
+    <div data-parallax-fg="0.05" style="max-width: 620px; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; will-change: transform;">
+      <p style="margin: 0; font-size: 14px; font-weight: 500; letter-spacing: 0.24em; color: rgba(14,79,82,0.75);">STAY A WHILE</p>
+      <h1 style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(48px, 6vw, 86px); line-height: 1.06; letter-spacing: -0.01em; color: #0E4F52; text-wrap: balance;">The quiet side of the counter.</h1>
+      <p style="margin: 0; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.6; color: rgba(14,79,82,0.85); max-width: 460px; text-wrap: pretty;">A refuge from the rush, one cup at a time.</p>
+    </div>
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: -2px; z-index: 4; pointer-events: none;">
+    <svg width="100%" height="130" viewBox="0 0 1600 130" preserveAspectRatio="none" style="display: block;">
+      <defs>
+        <filter id="caWash1" x="-10%" y="-60%" width="120%" height="220%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.011 0.045" numOctaves="3" seed="73" result="noise"></feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="55" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+        </filter>
+      </defs>
+      <rect x="-40" y="86" width="1680" height="120" fill="#F3E7D2" filter="url(#caWash1)"></rect>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ S2 The tables ============ -->
+<section data-screen-label="Café S2 — The tables" style="position: relative; background: #F3E7D2; padding: clamp(80px, 9vw, 140px) clamp(28px, 5vw, 72px); font-family: Lora, Georgia, serif; overflow: hidden;">
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none;">
+    <filter id="caPaper"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"></feTurbulence></filter>
+    <rect width="100%" height="100%" filter="url(#caPaper)"></rect>
+  </svg>
+  <div style="position: relative; max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: minmax(min(340px, 100%), 520px) 1fr; gap: clamp(48px, 7vw, 110px); align-items: center;">
+    <figure data-reveal="left" data-warmup="true" style="margin: 0; position: relative; transform: rotate(-1.4deg);">
+      <!-- vignette warm-up on enter -->
+      <div aria-hidden="true" data-warm-glow="true" style="position: absolute; inset: -14%; border-radius: 50%; background: radial-gradient(ellipse 58% 52% at 50% 50%, rgba(232,130,60,0.32) 0%, rgba(232,130,60,0) 70%); opacity: 0; transition: opacity 2.2s ease; pointer-events: none;"></div>
+      <div style="background: #FFFDF7; padding: 24px 24px 32px; border-radius: 4px; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 18px 42px rgba(14,79,82,0.16); clip-path: polygon(0.5% 1%, 25% 0.3%, 51% 1.1%, 78% 0.2%, 99.5% 0.9%, 99.9% 27%, 99.2% 52%, 99.8% 77%, 99.3% 99.1%, 75% 99.6%, 50% 99%, 24% 99.7%, 0.5% 99.2%, 0.9% 74%, 0.3% 49%, 0.8% 25%);">
+        <img loading="lazy" decoding="async" src="assets/cafe-family-table.webp" alt="A family sharing a plate of wonders at a worn wooden table, crumbs and laughter in soft light" style="outline: 1px solid rgba(14,79,82,0.22); outline-offset: -1px; display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 45%; transform: scale(1.04);">
+      </div>
+      <div aria-hidden="true" style="position: absolute; top: -9px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; background: #0E4F52; box-shadow: 0 3px 6px rgba(14,79,82,0.35), inset -2px -2px 3px rgba(0,0,0,0.25);"></div>
+    </figure>
+    <div data-reveal="up" style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; max-width: 520px;">
+      <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.18; color: #0E4F52; text-wrap: balance;">Tables worn smooth by four generations of elbows.</h2>
+      <p style="margin: 0; font-size: clamp(17px, 1.4vw, 19px); line-height: 1.75; color: #274b4d; text-wrap: pretty;">Bring the <span style="color: #E0742F;">whole family</span>. We&rsquo;ll bring the crumbs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- wash: warm cream → base cream -->
+<div aria-hidden="true" style="position: relative; height: 90px; background: #F3E7D2; overflow: hidden;">
+  <svg width="100%" height="90" viewBox="0 0 1600 90" preserveAspectRatio="none" style="display: block; position: absolute; inset: 0;">
+    <filter id="caWash2" x="-10%" y="-80%" width="120%" height="260%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.013 0.05" numOctaves="3" seed="79" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="50" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+    <rect x="-40" y="30" width="1680" height="100" fill="#FBF3E6" filter="url(#caWash2)"></rect>
+  </svg>
+</div>
+
+<!-- ============ S3 The windowsill ============ -->
+<section data-screen-label="Café S3 — The windowsill" style="position: relative; background: #FBF3E6; padding: clamp(80px, 9vw, 140px) clamp(28px, 5vw, 72px); font-family: Lora, Georgia, serif; overflow: hidden;">
+  <svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.035; pointer-events: none;">
+    <rect width="100%" height="100%" filter="url(#caPaper)"></rect>
+  </svg>
+  <div style="position: relative; max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr minmax(min(340px, 100%), 520px); gap: clamp(48px, 7vw, 110px); align-items: center;">
+    <div data-reveal="up" style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; max-width: 520px; justify-self: end; order: 0;">
+      <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.18; color: #0E4F52; text-wrap: balance;">The windowsill belongs to the <span style="color: #E0742F;">cat</span>.</h2>
+      <p style="margin: 0; font-size: clamp(17px, 1.4vw, 19px); line-height: 1.75; color: #274b4d; text-wrap: pretty;">Everything else is yours.</p>
+    </div>
+    <figure data-reveal="right" data-loop="true" style="margin: 0; position: relative; transform: rotate(1.2deg); order: 1; animation: caCat 5s ease-in-out infinite; transform-origin: 50% 100%;">
+      <!-- dust motes in the sunbeam -->
+      <div aria-hidden="true" data-loop="true" style="position: absolute; inset: 24px 24px 32px; z-index: 2; overflow: hidden; pointer-events: none;">
+        <span style="position: absolute; top: 8%; left: 34%; width: 3px; height: 3px; border-radius: 50%; background: #FFFDF7; --m-op: 0.55; --m-dx: 10px; animation: caMote 9s linear infinite;"></span>
+        <span style="position: absolute; top: 4%; left: 48%; width: 2px; height: 2px; border-radius: 50%; background: #F8EFDD; --m-op: 0.45; --m-dx: -8px; animation: caMote 12s linear 3s infinite;"></span>
+        <span style="position: absolute; top: 10%; left: 60%; width: 3px; height: 3px; border-radius: 50%; background: #FFFDF7; --m-op: 0.5; --m-dx: 14px; animation: caMote 10s linear 6s infinite;"></span>
+      </div>
+      <div style="background: #FFFDF7; padding: 24px 24px 32px; border-radius: 4px; box-shadow: 0 2px 3px rgba(14,79,82,0.10), 0 18px 42px rgba(14,79,82,0.16); clip-path: polygon(0.7% 0.6%, 26% 1%, 52% 0.2%, 77% 1.1%, 99.3% 0.5%, 99.8% 26%, 99.1% 51%, 99.7% 76%, 99.2% 99.4%, 75% 98.9%, 50% 99.6%, 24% 99%, 0.6% 99.5%, 0.9% 75%, 0.3% 50%, 0.8% 26%);">
+        <img loading="lazy" decoding="async" src="assets/cafe-cat-windowsill.webp" alt="The bakery cat asleep on the sunny windowsill, the city muted beyond the glass" style="outline: 1px solid rgba(14,79,82,0.22); outline-offset: -1px; display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 45%; transform: scale(1.04);">
+      </div>
+      <div aria-hidden="true" style="position: absolute; top: -9px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; background: #E8823C; box-shadow: 0 3px 6px rgba(14,79,82,0.35), inset -2px -2px 3px rgba(0,0,0,0.25);"></div>
+    </figure>
+  </div>
+</section>
+
+<!-- wash: cream → dusk for refuge contrast -->
+<div aria-hidden="true" style="position: relative; height: 100px; background: #FBF3E6; overflow: hidden;">
+  <svg width="100%" height="100" viewBox="0 0 1600 100" preserveAspectRatio="none" style="display: block; position: absolute; inset: 0;">
+    <filter id="caWash3" x="-10%" y="-80%" width="120%" height="260%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.048" numOctaves="3" seed="83" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="55" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+    <rect x="-40" y="34" width="1680" height="110" fill="#123E42" filter="url(#caWash3)"></rect>
+  </svg>
+</div>
+
+<!-- ============ S4 Refuge contrast (full-bleed) ============ -->
+<section data-screen-label="Café S4 — Leave the rush" style="position: relative; background: #123E42; min-height: 88vh; font-family: Lora, Georgia, serif; overflow: hidden; display: flex; align-items: flex-end;">
+  <div style="position: absolute; inset: 0; overflow: hidden;">
+    <img loading="lazy" decoding="async" data-rush="true" src="assets/cafe-city-contrast.webp" alt="A desaturated, hurried gray street bleeding into the warm glowing café doorway" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block; will-change: filter;">
+    <!-- doorway warmth that grows as the rush dissolves -->
+    <div aria-hidden="true" data-doorway-warm="true" style="position: absolute; inset: 0; background: radial-gradient(ellipse 30% 42% at 63% 62%, rgba(232,130,60,0.4) 0%, rgba(232,130,60,0) 70%); mix-blend-mode: screen; opacity: 0; pointer-events: none;"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,62,66,1) 0%, rgba(18,62,66,0.85) 14%, rgba(18,62,66,0.4) 30%, rgba(18,62,66,0.05) 48%, rgba(18,62,66,0.5) 78%, rgba(18,62,66,0.95) 94%, rgba(18,62,66,1) 100%);"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,62,66,0.55) 0%, rgba(18,62,66,0) 12%, rgba(18,62,66,0) 88%, rgba(18,62,66,0.55) 100%);"></div>
+  </div>
+  <div style="position: relative; z-index: 2; width: 100%; padding: 120px clamp(28px, 5vw, 72px) clamp(90px, 10vw, 140px); display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center;">
+    <h2 data-reveal="up" style="margin: 0; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: clamp(36px, 4.2vw, 58px); line-height: 1.1; color: #F8EFDD; text-wrap: balance;">Leave the rush at the door.</h2>
+    <a href="visit.html" style="display: inline-flex; align-items: center; gap: 12px; background: #E0742F; color: #3A1C05; font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 18px; padding: 16px 34px; border-radius: 10px; box-shadow: 0 10px 28px rgba(0,0,0,0.28);" style-hover="background: #E8823C; color: #3A1C05; box-shadow: 0 12px 32px rgba(0,0,0,0.34);">Find your table</a>
+  </div>
+</section>
+
+<!-- wash: dusk → teal footer -->
+<div aria-hidden="true" style="position: relative; height: 90px; background: #123E42; overflow: hidden;">
+  <svg width="100%" height="90" viewBox="0 0 1600 90" preserveAspectRatio="none" style="display: block; position: absolute; inset: 0;">
+    <filter id="caWash4" x="-10%" y="-80%" width="120%" height="260%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014 0.05" numOctaves="3" seed="89" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="48" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+    <rect x="-40" y="30" width="1680" height="100" fill="#0E4F52" filter="url(#caWash4)"></rect>
+  </svg>
+</div>
+
+<footer data-screen-label="Café — Footer" style="position: relative; background: #0E4F52; padding: clamp(56px, 6vw, 90px) clamp(28px, 5vw, 72px) 48px; font-family: Lora, Georgia, serif;">
+  <div style="max-width: 1140px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px;">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 36px;">
+      <a href="index.html" aria-label="Hearth &amp; Fable — home" style="font-family: Fraunces, Georgia, serif; font-optical-sizing: auto; font-weight: 600; font-size: 26px; color: #F8EFDD; display: flex; align-items: baseline; gap: 2px;">
+        <span>Hearth </span><span style="position: relative; padding: 0 1px;">&amp;<span style="position: absolute; top: -2px; right: -4px; width: 5px; height: 5px; border-radius: 50%; background: #E8823C; display: block;"></span></span><span> Fable</span>
+      </a>
+      <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: clamp(18px, 2.4vw, 34px); font-size: 15px; letter-spacing: 0.02em;">
+        <a href="index.html" style="color: rgba(248,239,221,0.85);" style-hover="color: #E8823C;">Home</a>
+        <a href="our-story.html" style="color: rgba(248,239,221,0.85);" style-hover="color: #E8823C;">Our Story</a>
+        <a href="the-bakes.html" style="color: rgba(248,239,221,0.85);" style-hover="color: #E8823C;">The Bakes</a>
+        <a href="the-craft.html" style="color: rgba(248,239,221,0.85);" style-hover="color: #E8823C;">The Craft</a>
+        <a href="the-cafe.html" style="color: rgba(248,239,221,0.85);" style-hover="color: #E8823C;">The Café</a>
+        <a href="visit.html" style="color: rgba(248,239,221,0.85);" style-hover="color: #E8823C;">Visit</a>
+      </nav>
+    </div>
+    <div style="border-top: 1px solid rgba(248,239,221,0.18); padding-top: 26px; display: flex; justify-content: center; font-size: 15px; color: rgba(248,239,221,0.7);">
+      <span style="font-style: italic;">Baked with patience by the Fable family.</span>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 16px; margin-top: -18px; font-size: 13.5px; color: rgba(248,239,221,0.55);">
+      <span>&copy; 2026 Hearth &amp; Fable. All rights reserved.</span>
+      <span>Hewn &amp; kindled by <a href="https://webdevcaveman.com" style="color: rgba(248,239,221,0.7); letter-spacing: 0.12em; font-size: 12.5px;" style-hover="color: #E8823C;">WEBDEVCAVEMAN</a></span>
+    </div>
+  </div>
+</footer>
+<script src="site.js" defer></script>
+</body>
+</html>
